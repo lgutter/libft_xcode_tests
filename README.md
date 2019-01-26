@@ -30,4 +30,4 @@ Good luck!
 ## Support
 Can't get it to work or have bug reports / suggestions?
 
-Email me at lgutter@student.codam.nl
+Feel free to contact me: https://profile.intra.42.fr/users/lgutter
