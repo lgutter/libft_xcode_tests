@@ -47,7 +47,7 @@
 	check1 = memccpy(dst1, str1, '*', len);
 	check2 = ft_memccpy(dst2, str1, '*', len);
 	XCTAssert(check1 == &dst1[7], @"memccpy did not return address of byte after delim, returned %p instead of %p", check1, &dst1[7]);
-	XCTAssert(check2 == &dst1[7], @"ft_memccpy did not return address of byte after delim, returned %p instead of %p", check2, &dst1[7]);
+	XCTAssert(check2 == &dst2[7], @"ft_memccpy did not return address of byte after delim, returned %p instead of %p", check2, &dst1[7]);
 	while (i < 8)
 	{
 		XCTAssert(dst1[i] == dst2[i], @"incorrect value on pos %i, expected %c, returned %c", i, dst1[i], dst2[i]);
@@ -67,7 +67,7 @@
 	check1 = memccpy(dst1, str1, '*', len);
 	check2 = ft_memccpy(dst2, str1, '*', len);
 	XCTAssert(check1 == &dst1[1], @"memccpy did not return address of byte after delim, returned %p instead of %p", check1, &dst1[7]);
-	XCTAssert(check2 == &dst1[1], @"ft_memccpy did not return address of byte after delim, returned %p instead of %p", check2, &dst1[7]);
+	XCTAssert(check2 == &dst2[1], @"ft_memccpy did not return address of byte after delim, returned %p instead of %p", check2, &dst1[7]);
 	while (i < 1)
 	{
 		XCTAssert(dst1[i] == dst2[i], @"incorrect value on pos %i, expected %c, returned %c", i, dst1[i], dst2[i]);
@@ -107,7 +107,7 @@
 	check1 = memccpy(dst1, str1, '\0', len);
 	check2 = ft_memccpy(dst2, str1, '\0', len);
 	XCTAssert(check1 == &dst1[7], @"memcpy did not return address of byte after delim, returned %p instead of %p", check1, &dst1[7]);
-	XCTAssert(check2 == &dst1[7], @"ft_memcpy did not return address of byte after delim, returned %p instead of %p", check2, &dst1[7]);
+	XCTAssert(check2 == &dst2[7], @"ft_memcpy did not return address of byte after delim, returned %p instead of %p", check2, &dst1[7]);
 	while (i < 8)
 	{
 		XCTAssert(dst1[i] == dst2[i], @"incorrect value on pos %i, expected %c, returned %c", i, dst1[i], dst2[i]);
