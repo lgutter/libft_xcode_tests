@@ -35,14 +35,15 @@
 	}
 }
 
-- (void)testIfStrClrSetAllStrPosTo0WithStringOfZeroLen {
-	char *str;
-	int i = 0;
-
-	str = (char*)malloc(sizeof(char) * 0);
-	ft_strclr(str);
-	XCTAssert(str[i] == '\0', @"string not properly allocated");
-
-}
+//CREATES BAD EXCESS ERROR, WHICH IS EXPECTED
+//- (void)testIfStrClrSetAllStrPosTo0WithStringOfZeroLen {
+//	char *str;
+//	int i = 0;
+//
+//	str = (char*)malloc(sizeof(char) * 0);
+//	ft_strclr(str);
+//	XCTAssert(str[i] == '\0', @"string not properly allocated");
+//
+//}
 
 @end
