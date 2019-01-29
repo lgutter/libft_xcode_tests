@@ -115,34 +115,34 @@
 }
 
 //TESTS WITH NULL STRINGER, ONLY FOR PROTECTED FUNCTIONS
-//- (void)testIfOneNULLStringReturns0WithDifferentMaxLengths {
-//	char *str1;
-//	char *str2;
-//	int i = 0;
-//	int ret;
-//
-//	str1 = (char *)malloc(sizeof(char) * 10);
-//	str1 = "Testerder";
-//	while (i < 3) //shouldn't go past 0
-//	{
-//		ret = ft_strnequ(str1, str2, i);
-//		XCTAssert(0 == ret, @"ft_strnequ returns %i instead of 0 on one empty string.", ret);
-//		i++;
-//	}
-//}
-//
-//- (void)testIfTwoNULLStringsReturn1WithDifferentMaxLengths {
-//	char *str1;
-//	char *str2;
-//	int i = 0;
-//	int ret;
-//
-//	while (i < 3) //shouldn't go past 0
-//	{
-//		ret = ft_strnequ(str1, str2, i);
-//		XCTAssert(1 != ret, @"ft_strnequ returns %i instead of 1 on two empty strings.", ret);
-//		i++;
-//	}
-//}
+- (void)testIfOneNULLStringReturns0WithDifferentMaxLengths {
+	char *str1;
+	char *str2;
+	int i = 0;
+	int ret;
+
+	str1 = (char *)malloc(sizeof(char) * 10);
+	str1 = "Testerder";
+	while (i < 3) //shouldn't go past 0
+	{
+		ret = ft_strnequ(str1, str2, i);
+		XCTAssert(0 == ret, @"ft_strnequ returns %i instead of 0 on one empty string.", ret);
+		i++;
+	}
+}
+
+- (void)testIfTwoNULLStringsReturn1WithDifferentMaxLengths {
+	char *str1;
+	char *str2;
+	int i = 0;
+	int ret;
+
+	while (i < 3) //shouldn't go past 0
+	{
+		ret = ft_strnequ(str1, str2, i);
+		XCTAssert(1 != ret, @"ft_strnequ returns %i instead of 1 on two empty strings.", ret);
+		i++;
+	}
+}
 
 @end
