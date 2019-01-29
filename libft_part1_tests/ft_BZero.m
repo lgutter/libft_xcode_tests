@@ -154,17 +154,10 @@
 
 //WILL BREAK REAL AND FT BZERO.
 - (void)testBZeroWithVoidStrings {
-	int	c1 = 0;
-	size_t len1 = 10;
-	int	c2 = 0;
-	size_t len2 = 10;
+	size_t len = 10;
 
-	bzero(NULL, c, len);
-	ft_bzero(NULL, c2, len2); //Will it break? YES
-	while (c1 < len1)
-	{
-		XCTAssert(str1[c1] == str2[c1], @"ft_bzero does not match bzero at pos %i, returned %c instead of %c", c1, str2[c1], str1[c1]);
-	}
+	bzero(NULL, len);
+	ft_bzero(NULL, len); //Will it break? YES
 }
 
 
