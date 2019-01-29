@@ -96,7 +96,7 @@
 }
 
 - (void)testMemCCpyWithPartOfWeirdStringWhenFindingDelim {
-	char *str1 = (char *)malloc(sizeof(char) * 10);
+	char *str1;
 	str1 = "%$ \t\e\n\0@`#";
 	size_t len = 10;
 	char *dst1 = (char *)malloc(sizeof(char) * len);
