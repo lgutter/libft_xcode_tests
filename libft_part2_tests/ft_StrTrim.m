@@ -97,6 +97,7 @@
 	XCTAssert(ret[0] == check[0], @"ft_strtrim failed at pos 0. returned %s instead of %s", ret, check);
 }
 
+//CREATES BAD EXCESS ERROR SINCE NO MEMORY SPACE WAS ALLOCATED
 - (void)testSizeOf0 {
 	char *str = (char *)malloc(0);
 	char *ret;
