@@ -175,28 +175,6 @@
 		c++;
 	}
 }
-//THESE BREAK BOTH THE REAL AND FT FUNCTIONS
-- (void)testMemSetWith10Times1InIntArr {
-	int *str1 = (int *)malloc(sizeof(int) * 10);
-	int *str2 = (int *)malloc(sizeof(int) * 10);
-	int	c = 1;
-	size_t len = (sizeof(int) * 10);
-	int *check1;
-	int *check2;
-	check1 = memset(str1, c, len);
-	check2 = ft_memset(str2, c, len);
-	c = 0;
-	XCTAssert(check1 == str1 && check2 == str2, @"return value 1 is %p, input 1 %p, return value 2 is %p, input 2 %p.", str1, check1, str2, check2);
-	while (c < len)
-	{
-		XCTAssert(str1[c] == str2[c], @"ft_memset does not match memset at pos %i, returned %i instead of %i", c, str2[c], str1[c]);
-		c++;
-	}
-}
 
-- (void)testMemSetWithVoidStrings {
-	memset(NULL, 1, 1);
-	ft_memset(NULL, 1, 1); //Will it break? YES
-}
 
 @end

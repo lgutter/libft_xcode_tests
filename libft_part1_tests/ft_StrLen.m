@@ -40,20 +40,6 @@
 	XCTAssert(len == rlen, @"String length incorrect, len is %zu, should be %zu", len, rlen);
 }
 
-//CREATES BAD EXCESS ERROR ON REAL AND FT
-- (void)testIfLenIsCorrectWithStringWithoutTerminating0 {
-	char *str;
-	int i = 0;
-	size_t len;
-	size_t rlen;
-	str = (char *)malloc(sizeof(char) * 10);
-	while (i < 9)
-		str[i++] = 'a';
-	len = ft_strlen(str);
-	rlen = strlen(str);
-	XCTAssert(len == rlen, @"String length incorrect, len is %zu, should be %zu", len, rlen);
-}
-
 - (void)testIfLenIsCorrectForStringWithWeirdChars {
 	char *str;
 	size_t len;

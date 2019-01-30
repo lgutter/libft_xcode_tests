@@ -67,27 +67,6 @@
 	XCTAssert(0 == ret, @"ft_strequ returns %i instead of 0 when second string is shorter.", ret);
 }
 
-//TESTNULLSTRINGS - ONYL FOR PROTECTED FUNCTIONS
-- (void)testIfOneNULLStringReturns0 {
-	char *str1;
-	char *str2;
-	int ret;
-
-	str1 = (char *)malloc(sizeof(char) * 10);
-	str1 = "Testerder";
-	ret = ft_strequ(str1, str2);
-	XCTAssert(0 == ret, @"ft_strequ returns %i instead of 0 on one empty string.", ret);
-}
-
-- (void)testIfTwoNULLStringsReturn1 {
-	char *str1;
-	char *str2;
-	int ret;
-
-	ret = ft_strequ(str1, str2);
-	XCTAssert(1 == ret, @"ft_strequ returns %i instead of 1 on two empty strings.", ret);
-}
-
 - (void)testIfTwoStringsOfSize1Return1 {
 	char *str1;
 	char *str2;

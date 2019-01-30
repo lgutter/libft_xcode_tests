@@ -152,13 +152,5 @@
 	}
 }
 
-//WILL BREAK REAL AND FT BZERO.
-- (void)testBZeroWithVoidStrings {
-	size_t len = 10;
-
-	bzero(NULL, len);
-	ft_bzero(NULL, len); //Will it break? YES
-}
-
 
 @end

@@ -62,13 +62,4 @@
 	free(ret2); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
-//WILL BREAK REAL STRDUP, AND SO SHOULD FT_STRDUP
-- (void)testWithNullString {
-	char *ret1;
-	char *ret2;
-
-	ret1 = strdup(NULL);
-	ret2 = ft_strdup(NULL);
-}
-
 @end
