@@ -26,6 +26,7 @@
 	char *check2;
 	while (limit <= len)
 	{
+		index = 0;
 		string1 = memset(string1, 42, len);
 		string2 = memset(string2, 42, len);
 		string1 = strcpy(string1, "Thisis");
@@ -34,7 +35,7 @@
 		check2 = ft_strncat(string2, cat, limit);
 		XCTAssert(check1 == string1, @"strncat returned wrong address. returned %p, expected %p.", check1, string1);
 		XCTAssert(check2 == string2, @"strncat returned wrong address. returned %p, expected %p.", check2, string2);
-		while (index < len)
+		while (index < strlen(string1))
 		{
 			XCTAssert(check1[index] == check2[index], @"ft_strncat fails on pos %zu with limit %zu. strncat returned %c, ft_strncat returned %c", index, limit, check1[index], check2[index]);
 			index++;
@@ -56,6 +57,7 @@
 	char *check2;
 	while (limit <= len)
 	{
+		index = 0;
 		string1 = memset(string1, 42, len);
 		string2 = memset(string2, 42, len);
 		string1 = strcpy(string1, "This");
@@ -64,7 +66,7 @@
 		check2 = ft_strncat(string2, cat, limit);
 		XCTAssert(check1 == string1, @"strncat returned wrong address. returned %p, expected %p.", check1, string1);
 		XCTAssert(check2 == string2, @"strncat returned wrong address. returned %p, expected %p.", check2, string2);
-		while (index < len)
+		while (index < strlen(string1))
 		{
 			XCTAssert(check1[index] == check2[index], @"ft_strncat fails on pos %zu with limit %zu. strncat returned %c, ft_strncat returned %c", index, limit, check1[index], check2[index]);
 			index++;
@@ -75,26 +77,27 @@
 	free(string2);
 }
 
-- (void)testWithSimpleStringsThatDontFit {
+- (void)testWithWeirdStringsThatFitPerfectly {
 	size_t len = 12;
 	size_t index = 0;
 	size_t limit = 0;
 	char *string1 = (char *)malloc(sizeof(char) * len);
 	char *string2 = (char *)malloc(sizeof(char) * len);
-	char *cat = "alongtest";
+	char *cat = "*\t ~`";
 	char *check1;
 	char *check2;
 	while (limit <= len)
 	{
+		index = 0;
 		string1 = memset(string1, 42, len);
 		string2 = memset(string2, 42, len);
-		string1 = strcpy(string1, "Thisis");
-		string2 = strcpy(string2, "Thisis");
+		string1 = strcpy(string1, "%&\e\n@#");
+		string2 = strcpy(string2, "%&\e\n@#");
 		check1 = strncat(string1, cat, limit);
 		check2 = ft_strncat(string2, cat, limit);
 		XCTAssert(check1 == string1, @"strncat returned wrong address. returned %p, expected %p.", check1, string1);
 		XCTAssert(check2 == string2, @"strncat returned wrong address. returned %p, expected %p.", check2, string2);
-		while (index < len)
+		while (index < strlen(string1))
 		{
 			XCTAssert(check1[index] == check2[index], @"ft_strncat fails on pos %zu with limit %zu. strncat returned %c, ft_strncat returned %c", index, limit, check1[index], check2[index]);
 			index++;
@@ -104,5 +107,37 @@
 	free(string1);
 	free(string2);
 }
+
+- (void)testWithWeirdStringsThatAreShorter {
+	size_t len = 12;
+	size_t index = 0;
+	size_t limit = 0;
+	char *string1 = (char *)malloc(sizeof(char) * len);
+	char *string2 = (char *)malloc(sizeof(char) * len);
+	char *cat = "\t ~`";
+	char *check1;
+	char *check2;
+	while (limit <= len)
+	{
+		index = 0;
+		string1 = memset(string1, 42, len);
+		string2 = memset(string2, 42, len);
+		string1 = strcpy(string1, "%&\e\n");
+		string2 = strcpy(string2, "%&\e\n");
+		check1 = strncat(string1, cat, limit);
+		check2 = ft_strncat(string2, cat, limit);
+		XCTAssert(check1 == string1, @"strncat returned wrong address. returned %p, expected %p.", check1, string1);
+		XCTAssert(check2 == string2, @"strncat returned wrong address. returned %p, expected %p.", check2, string2);
+		while (index < strlen(string1))
+		{
+			XCTAssert(check1[index] == check2[index], @"ft_strncat fails on pos %zu with limit %zu. strncat returned %c, ft_strncat returned %c", index, limit, check1[index], check2[index]);
+			index++;
+		}
+		limit++;
+	}
+	free(string1);
+	free(string2);
+}
+
 
 @end
