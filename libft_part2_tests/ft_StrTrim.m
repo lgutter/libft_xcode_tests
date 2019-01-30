@@ -28,6 +28,7 @@
 		XCTAssert(ret[i] == check[i], @"ft_strtrim failed at pos %i. returned %s instead of %s", i, ret, check);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testSimpleStringWithWhitespaceAtBothEnds {
@@ -43,6 +44,7 @@
 		XCTAssert(ret[i] == check[i], @"ft_strtrim failed at pos %i. returned %s instead of %s", i, ret, check);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 
@@ -59,6 +61,7 @@
 		XCTAssert(ret[i] == check[i], @"ft_strtrim failed at pos %i. returned %s instead of %s", i, ret, check);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testSimpleStringWithOnlyWhitespaces {
@@ -70,6 +73,7 @@
 	str = " \n\t\t\n \t\n";
 	ret = ft_strtrim(str);
 		XCTAssert(ret[i] == check[i], @"ft_strtrim failed at pos %i. returned %s instead of %s", i, ret, check);
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testSimpleStringWithWhitespaceAtBothEndsAndMiddlePlusWeirdChars {
@@ -85,6 +89,7 @@
 		XCTAssert(ret[i] == check[i], @"ft_strtrim failed at pos %i. returned %s instead of %s", i, ret, check);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testSizeOf1 {
@@ -95,6 +100,7 @@
 	str = "";
 	ret = ft_strtrim(str);
 	XCTAssert(ret[0] == check[0], @"ft_strtrim failed at pos 0. returned %s instead of %s", ret, check);
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 //CREATES BAD EXCESS ERROR SINCE NO MEMORY SPACE WAS ALLOCATED

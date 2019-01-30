@@ -29,6 +29,7 @@
 		XCTAssert(ret[i] == str1[i + start], @"ft_strsub failed at pos %i, expected %c, returned %c.", i, str1[i + start], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testifReturnedStringIsAsExpectedWithEndOfNormalString {
@@ -45,6 +46,7 @@
 		XCTAssert(ret[i] == str1[i + start], @"ft_strsub failed at pos %i, expected %c, returned %c.", i, str1[i + start], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testifReturnedStringIsAsExpectedPastEndOfNormalString { //WORKS BUT COULD CAUSE MEM ERRORS
@@ -61,6 +63,7 @@
 		XCTAssert(ret[i] == str1[i + start], @"ft_strsub failed at pos %i, expected %c, returned %c.", i, str1[i + start], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testifReturnedStringIsAsExpectedWithMiddleOfStringContainingWeirdChars {
@@ -77,6 +80,7 @@
 		XCTAssert(ret[i] == str1[i + start], @"ft_strsub failed at pos %i, expected %c, returned %c.", i, str1[i + start], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testifReturnedStringIsAsExpectedWithEndOfStringContainingWeirdChars {
@@ -93,6 +97,7 @@
 		XCTAssert(ret[i] == str1[i + start], @"ft_strsub failed at pos %i, expected %c, returned %c.", i, str1[i + start], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 @end

@@ -26,6 +26,7 @@
 		XCTAssert(str[i] == ret[i], @"pos %i is incorrect, expected %c, returned %c", i, str[i], ret[i]);
 		i++;
 	}
+	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testNegativeNumber {
@@ -40,6 +41,7 @@
 		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
 		i++;
 	}
+	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testZero {
@@ -54,6 +56,7 @@
 		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
 		i++;
 	}
+	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testMaxInteger {
@@ -68,6 +71,7 @@
 		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
 		i++;
 	}
+	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testMinInteger {
@@ -82,6 +86,7 @@
 		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
 		i++;
 	}
+	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testNegativeMaxInteger {
@@ -96,6 +101,7 @@
 		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
 		i++;
 	}
+	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 @end

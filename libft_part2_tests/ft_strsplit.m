@@ -27,6 +27,8 @@
 		XCTAssert(ret[0][i] == str[i], @"StrSplit failed at pos %i, expected %c, returned %c", i, str[i], ret[0][i]);
 		i++;
 	}
+	free(ret[0]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
 }
 
 - (void)testNormalSplitString {
@@ -53,6 +55,9 @@
 		XCTAssert(ret[1][i] == check[1][i], @"StrSplit failed at pos %i, expected %c, returned %c", i, check[1][i], ret[1][i]);
 		i++;
 	}
+	free(ret[0]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[1]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
 }
 
 - (void)testCrowdedSplitString {
@@ -76,6 +81,10 @@
 	}
 	XCTAssert(ret[1][0] == check[1][0], @"StrSplit failed at string 2, expected %c, returned %c",check[1][0], ret[1][0]);
 	XCTAssert(ret[2][0] == check[2][0], @"StrSplit failed at string 3, expected %c, returned %c",check[2][0], ret[2][0]);
+	free(ret[0]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[1]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[2]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
 }
 - (void)testCrowdedSplitStringWithWhiteSpace {
 	char *str = (char *)malloc(15);
@@ -113,6 +122,12 @@
 		XCTAssert(ret[4][i] == check[4][i], @"StrSplit failed at string 5, pos %i, expected %c, returned %c", i, check[4][i], ret[4][i]);
 		i++;
 	}
+	free(ret[0]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[1]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[2]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[3]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[4]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
 }
 
 - (void)testEmptyString {
@@ -124,6 +139,8 @@
 	ret = ft_strsplit(str, '*');
 	XCTAssert(ret[0] == NULL, @"StrSplit failed at pos %i, expected %c, returned %c", i, str[i], ret[0][i]);
 		i++;
+	free(ret[0]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
 }
 
 - (void)testNormalStringEmptyDelim {
@@ -138,6 +155,8 @@
 		XCTAssert(ret[0][i] == str[i], @"StrSplit failed at pos %i, expected %c, returned %c", i, str[i], ret[0][i]);
 		i++;
 	}
+	free(ret[0]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
 }
 
 @end

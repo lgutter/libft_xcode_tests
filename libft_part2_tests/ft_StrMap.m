@@ -36,6 +36,7 @@ char	test_char_increment_map(char c)
 		XCTAssert(ret[i] == 'b', @"strmap failed on position %i, char is %c", i, ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfSourceIsUnaffected {
@@ -52,6 +53,7 @@ char	test_char_increment_map(char c)
 		XCTAssert(str[i] == 'a', @"strmap failed on position %i, char is %c", i, str[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 @end

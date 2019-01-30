@@ -35,6 +35,7 @@
 		XCTAssert(ret[i] == str2[i - (s2 + 1)], @"Incorrect char on pos %i, expected %c, returned %c.", i, str2[i - (s2 + 1)], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfFirstEmptyStringCombinesProperly {
@@ -53,6 +54,7 @@
 		XCTAssert(ret[i] == str2[i], @"Incorrect char on pos %i, expected %c, returned %c.", i, str2[i], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfSecondEmptyStringCombinesProperly {
@@ -75,6 +77,7 @@
 		XCTAssert(ret[i] == str2[s2 - i], @"Incorrect char on pos %i, expected %c, returned %c.", i, str2[s2 - i], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfBothEmptyStringsCombineProperly {
@@ -97,6 +100,7 @@
 		XCTAssert(ret[i] == str2[s2 - i], @"Incorrect char on pos %i, expected %c, returned %c.", i, str2[s2 - i], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfSingleCharStringsCombineProperly {
@@ -119,6 +123,7 @@
 		XCTAssert(ret[i] == str2[s2 - i], @"Incorrect char on pos %i, expected %c, returned %c.", i, str2[s2 - i], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfWeirdStringsCombineProperly {
@@ -141,6 +146,7 @@
 		XCTAssert(ret[i] == str2[i - (s2 + 1)], @"Incorrect char on pos %i, expected %c, returned %c.", i, str2[i - (s2 + 1)], ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfSecondVoidStringCombinesProperly {
@@ -155,6 +161,7 @@
 		XCTAssert(ret[i] == str1[i], @"Incorrect return, expected %s, returned %s.", str1, ret);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 - (void)testIfFirstVoidStringCombinesProperly {
 	int s2 = 5;
@@ -168,6 +175,7 @@
 		XCTAssert(ret[i] == str2[i], @"Incorrect return, expected %s, returned %s.", str2, ret);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfBothVoidStringsCombineProperly {

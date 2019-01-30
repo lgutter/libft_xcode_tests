@@ -25,6 +25,7 @@
 		size--;
 		XCTAssert(a[size] == '\0', @"Memory was not initialized to 0, instead to %c", a[size]);
 	}
+	free(a); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testCheckZeroInitialisationMemAllocWithSize0 {
@@ -32,6 +33,7 @@
 	size_t	size = 0;
 	a = ft_memalloc(size);
 	XCTAssert(a != NULL, @"Memory was not allocated!");
+	free(a); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 @end

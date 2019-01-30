@@ -42,6 +42,7 @@ char	test_char_increment_map_index(unsigned int i, char c)
 			XCTAssert(ret[i] == 'c', @"ft_strmapi did not run function properly, char is %c", ret[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testIfSourceIsUnaffected {
@@ -58,6 +59,7 @@ char	test_char_increment_map_index(unsigned int i, char c)
 		XCTAssert(str[i] == 'a', @"strmap failed on position %i, char is %c", i, str[i]);
 		i++;
 	}
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 @end

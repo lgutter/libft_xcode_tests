@@ -33,6 +33,7 @@
 		XCTAssert(str[i] == '\0', @"string not properly cleared");
 		i--;
 	}
+	free(str);
 }
 
 //CREATES BAD EXCESS ERROR, WHICH IS EXPECTED

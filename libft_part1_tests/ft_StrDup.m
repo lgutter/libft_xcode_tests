@@ -28,6 +28,8 @@
 		XCTAssert(ret1[index] == ret2[index], @"ft_strdup failed on pos %zu, expected %c, returned %c", index, ret1[index], ret2[index]);
 		index++;
 	}
+	free(ret1);
+	free(ret2); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testWithEmptyString {
@@ -39,7 +41,8 @@
 	ret1 = strdup(string);
 	ret2 = ft_strdup(string);
 	XCTAssert(ret1[index] == ret2[index], @"ft_strdup failed on pos %zu, expected %c, returned %c", index, ret1[index], ret2[index]);
-
+	free(ret1);
+	free(ret2); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testWithWeirdCharsInString {
@@ -55,6 +58,8 @@
 		XCTAssert(ret1[index] == ret2[index], @"ft_strdup failed on pos %zu, expected %c, returned %c", index, ret1[index], ret2[index]);
 		index++;
 	}
+	free(ret1);
+	free(ret2); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 //WILL BREAK REAL STRDUP, AND SO SHOULD FT_STRDUP

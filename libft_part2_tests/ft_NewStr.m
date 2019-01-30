@@ -27,6 +27,7 @@
 		XCTAssert(str[i] == '\0', @"String pos %i not initialized to '\\0', instead is %c", i, str[i]);
 		i++;
 	}
+	free(str); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
 - (void)testSizeZero {
@@ -35,5 +36,6 @@
 	str = ft_strnew(0);
 	if (str == NULL)
 		XCTFail(@"String was not allocated");
+	free(str); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 @end
