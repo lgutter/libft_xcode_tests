@@ -19,11 +19,10 @@
 	unsigned char	*a;
 	size_t	size = 10;
 	a = ft_memalloc(size);
-	size++;
 	while (size > 0)
 	{
 		size--;
-		XCTAssert(a[size] == '\0', @"Memory was not initialized to 0, instead to %c", a[size]);
+		XCTAssert(a[size] == '\0', @"Memory pos %zu was not initialized to 0, instead to %c", size, a[size]);
 	}
 	free(a); //if this gives SIGABORT, you did not allocate your return string properly.
 }
