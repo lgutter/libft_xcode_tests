@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "libft.h"
 
 @interface ft_IsDigit : XCTestCase
 
@@ -23,6 +24,7 @@
 		out1 = isdigit(input);
 		out2 = ft_isdigit(input);
 		XCTAssert(out1 == out2, @"Character %i did not match, isdigit returned %i, ft_isdigit %i.", input, out1, out2);
+		input++;
 	}
 }
 
@@ -35,6 +37,7 @@
 		out1 = isdigit(input);
 		out2 = ft_isdigit(input);
 		XCTAssert(out1 == out2, @"Character %i did not match, isdigit returned %i, ft_isdigit %i.", input, out1, out2);
+		input++;
 	}
 }
 
