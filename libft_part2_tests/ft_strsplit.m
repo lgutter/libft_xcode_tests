@@ -60,6 +60,36 @@
 	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
 }
 
+- (void)testNormalSplitStringWithExtendedAsciiDelim {
+	char *str = (char *)malloc(6);
+	char **ret;
+	char **check = (char **)malloc(sizeof(char *) * 2);
+	check[0] = (char *)malloc(3);
+	check[1] = (char *)malloc(3);
+	unsigned char delim = 227;
+
+	int i = 0;
+
+	str = "te\xe3st";
+	check[0] = "te";
+	check[1] = "st";
+	ret = ft_strsplit(str, delim);
+	while (i < 3)
+	{
+		XCTAssert(ret[0][i] == check[0][i], @"StrSplit failed at pos %i, expected %c, returned %c", i, check[0][i], ret[0][i]);
+		i++;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		XCTAssert(ret[1][i] == check[1][i], @"StrSplit failed at pos %i, expected %c, returned %c", i, check[1][i], ret[1][i]);
+		i++;
+	}
+	free(ret[0]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret[1]); //if this gives SIGABORT, you did not allocate your return string properly.
+	free(ret); //if this gives SIGABORT, you did not allocate your return array properly.
+}
+
 - (void)testCrowdedSplitString {
 	char *str = (char *)malloc(10);
 	char **ret;

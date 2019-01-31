@@ -41,6 +41,17 @@
 	XCTAssert(0 == ret, @"ft_strequ returns %i instead of 0 on non-matching strings.", ret);
 }
 
+- (void)testIfExtendedAsciiInStringsReturn0 {
+	char *str1;
+	char *str2 = "Teste\xe3\\der";
+	int ret;
+
+	str1 = (char *)malloc(sizeof(char) * 10);
+	str1 = "Tester\\der";
+	ret = ft_strequ(str1, str2);
+	XCTAssert(0 == ret, @"ft_strequ returns %i instead of 0 on non-matching strings.", ret);
+}
+
 - (void)testIfFirstStringShorterReturn0 {
 	char *str1;
 	char *str2;

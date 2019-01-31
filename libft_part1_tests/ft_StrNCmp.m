@@ -120,8 +120,8 @@
 }
 
 - (void)testWithExtendedAsciiOnPos0OfSimpleStrings {
-	char str1[] = "�hisisatest";
-	char str2[] = "Thisisatest";
+	char *str1 = "\xe3hisisatest";
+	char *str2 = "Thisisatest";
 	int	ret1;
 	int ret2;
 	size_t len;

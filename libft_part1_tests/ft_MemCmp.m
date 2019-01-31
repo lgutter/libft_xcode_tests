@@ -121,8 +121,8 @@
 }
 
 - (void)testMemCmpWithExtendedAsciiOnPos0OfSimpleStrings {
-	unsigned char str1[] = "�hisisatest";
-	unsigned char str2[] = "Thisisatest";
+	char *str1 = "\xe3hisisatest";
+	char str2[] = "Thisisatest";
 	int	ret1;
 	int ret2;
 	size_t len;

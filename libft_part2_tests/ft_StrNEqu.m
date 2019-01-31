@@ -33,7 +33,7 @@
 		}
 }
 
-- (void)testIfStringsWithDifferentCharReturn0WithMaxLengthsLessThanDifferingChar {
+- (void)testIfStringsWithDifferentCharReturn0WithDifferentMaxLengths {
 	char *str1;
 	char *str2;
 	int i = 0;
