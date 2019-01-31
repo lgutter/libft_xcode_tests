@@ -64,8 +64,8 @@
 	char str[] = "*Thi*isatest";
 	void *ret1;
 	void *ret2;
-	ret1 = strchr(str, 'c');
-	ret2 = ft_strchr(str, 'c');
+	ret1 = strchr(str, '*');
+	ret2 = ft_strchr(str, '*');
 	XCTAssert(ret1 == ret2, @"ft_strchr failed with * on pos 0. Expected %p, returned %p", ret1, ret2);
 }
 
@@ -73,8 +73,8 @@
 	char str[] = "Thisi*a*est";
 	void *ret1;
 	void *ret2;
-	ret1 = strchr(str, 'c');
-	ret2 = ft_strchr(str, 'c');
+	ret1 = strchr(str, '*');
+	ret2 = ft_strchr(str, '*');
 	XCTAssert(ret1 == ret2, @"ft_strchr failed with * on pos 5. Expected %p, returned %p", ret1, ret2);
 }
 
@@ -82,8 +82,8 @@
 	char str[] = "Thisisate*t";
 	void *ret1;
 	void *ret2;
-	ret1 = strchr(str, 'c');
-	ret2 = ft_strchr(str, 'c');
+	ret1 = strchr(str, '*');
+	ret2 = ft_strchr(str, '*');
 	XCTAssert(ret1 == ret2, @"ft_strchr failed with * on pos 9. Expected %p, returned %p", ret1, ret2);
 }
 
@@ -91,8 +91,8 @@
 	char str[] = "Thisisates*";
 	void *ret1;
 	void *ret2;
-	ret1 = strchr(str, 'c');
-	ret2 = ft_strchr(str, 'c');
+	ret1 = strchr(str, '*');
+	ret2 = ft_strchr(str, '*');
 	XCTAssert(ret1 == ret2, @"ft_strchr failed with * on pos 10. Expected %p, returned %p", ret1, ret2);
 }
 
