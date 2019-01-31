@@ -149,38 +149,4 @@
 	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
-- (void)testIfSecondVoidStringCombinesProperly {
-	int s1 = 6;
-	int i = 0;
-	char *ret;
-	char *str1 = (char *)malloc(sizeof(char) * (s1 + 1));
-	str1 = "Thisis";
-	ret = ft_strjoin(str1, NULL);
-	while (i < s1)
-	{
-		XCTAssert(ret[i] == str1[i], @"Incorrect return, expected %s, returned %s.", str1, ret);
-		i++;
-	}
-	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
-}
-- (void)testIfFirstVoidStringCombinesProperly {
-	int s2 = 5;
-	int i = 0;
-	char *ret;
-	char *str2 = (char *)malloc(sizeof(char) * (s2 + 1));
-	str2 = "Atest";
-	ret = ft_strjoin(NULL, str2);
-	while (i < s2)
-	{
-		XCTAssert(ret[i] == str2[i], @"Incorrect return, expected %s, returned %s.", str2, ret);
-		i++;
-	}
-	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
-}
-
-- (void)testIfBothVoidStringsCombineProperly {
-	char *ret;
-	ret = ft_strjoin(NULL, NULL);
-	XCTAssert(!ret, @"should have returned NULL");
-}
 @end
