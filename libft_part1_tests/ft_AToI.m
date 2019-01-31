@@ -15,8 +15,18 @@
 
 @implementation ft_Atoi
 
+- (void)testWithZero {
+	char str[] = "0";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with zero. Expected %i, returned %i", ret1, ret2);
+}
+
 - (void)testWithSimpleNumber {
-	char str[] = "123";
+	char str[] = "103";
 	int	ret1;
 	int ret2;
 
@@ -25,8 +35,38 @@
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with just a normal number?! Expected %i, returned %i", ret1, ret2);
 }
 
+- (void)testWithSimpleNegativeNumber {
+	char str[] = "-130";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with a normal negative number. Expected %i, returned %i", ret1, ret2);
+}
+
 - (void)testWithMaxInteger {
 	char str[] = "2147483647";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithMaxIntegerPlusOne {
+	char str[] = "2147483648";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithTooLargeNumber{
+	char str[] = "2147483648343290";
 	int	ret1;
 	int ret2;
 
