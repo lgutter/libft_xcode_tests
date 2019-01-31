@@ -132,4 +132,5 @@
 	ret2 = ft_memcmp(str1, str2, len);
 	XCTAssert(ret1 == ret2, @"ft_memcmp failed with a difference on pos 0 with len 0. Expected %i, returned %i", ret1, ret2);
 }
+
 @end
