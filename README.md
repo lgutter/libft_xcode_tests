@@ -21,7 +21,7 @@ To run the tests, hold LMB on the play button and then select the test button. X
 If one of the tests gave a system error, Xcode will jump to that test or function.\
 If xcode shows the error at a "free" call, you did not properly allocate that return string. Otherwise the problem is in whatever function xcode points to.\
 You can temporarily disable a test that gives a system error to complete all tests, just don't forget to correct that mistake!\
-Once Xcode is able to run all the tests it will show you which have failed, and when you click the test you will get more information on what failed.\
+Once Xcode is able to run all the tests it will show you which have failed, and when you click the test you will get more information on what failed.
 
 Good luck!
 
