@@ -55,6 +55,26 @@
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
 }
 
+- (void)testWithMaxIntegerPlusOne {
+	char str[] = "2147483648";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithMinInteger {
+	char str[] = "-2147483648";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with minimum integer. Expected %i, returned %i", ret1, ret2);
+}
+
 - (void)testWithNumberOverMaxInt{
 	char str[] = "7223372036854775807";
 	int	ret1;
@@ -62,7 +82,17 @@
 
 	ret1 = atoi(str);
 	ret2 = ft_atoi(str);
-	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with number over maximum integer. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithNumberOverMaxIntWithPlusSign{
+	char str[] = "+7223372036854775807";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with number over maximum integer and a plus sign. Expected %i, returned %i", ret1, ret2);
 }
 
 - (void)testWithMinLong {
@@ -73,6 +103,16 @@
 	ret1 = atoi(str);
 	ret2 = ft_atoi(str);
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with min long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithMinLongMinusOne {
+	char str[] = "-9223372036854775809";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with min long minus one. Expected %i, returned %i", ret1, ret2);
 }
 
 - (void)testWithNumberUnderMinLong {
@@ -105,6 +145,16 @@
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with negative value over max long. Expected %i, returned %i", ret1, ret2);
 }
 
+- (void)testWithMaxLongMinusOne {
+	char str[] = "9223372036854775806";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with max long minus one. Expected %i, returned %i", ret1, ret2);
+}
+
 - (void)testWithMaxLong {
 	char str[] = "9223372036854775807";
 	int	ret1;
@@ -113,6 +163,26 @@
 	ret1 = atoi(str);
 	ret2 = ft_atoi(str);
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with max long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithMaxLongPlusOne {
+	char str[] = "9223372036854775807";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with max long plus one. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithNegativeMaxLong {
+	char str[] = "-9223372036854775807";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with negative max long. Expected %i, returned %i", ret1, ret2);
 }
 
 - (void)testWithNumberOverMaxLong {
@@ -143,26 +213,6 @@
 	ret1 = atoi(str);
 	ret2 = ft_atoi(str);
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with value over max long. Expected %i, returned %i", ret1, ret2);
-}
-
-- (void)testWithMaxIntegerPlusOne {
-	char str[] = "2147483648";
-	int	ret1;
-	int ret2;
-
-	ret1 = atoi(str);
-	ret2 = ft_atoi(str);
-	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
-}
-
-- (void)testWithMinInteger {
-	char str[] = "-2147483648";
-	int	ret1;
-	int ret2;
-
-	ret1 = atoi(str);
-	ret2 = ft_atoi(str);
-	XCTAssert(ret1 == ret2, @"ft_atoi failed with minimum integer. Expected %i, returned %i", ret1, ret2);
 }
 
 - (void)testWithWhitespaceBeforeSimpleNumber {
