@@ -11,7 +11,7 @@ You might however, find errors not found by some other tests on GitHub.
 To set up these tests follow these steps:
 
 - git clone & open the test project by running this from your terminal:\
-```git clone https://github.com/lgutter/libft_xcode_tests.git && open libft_xcode_tests/libfttests.xcodeproj```
+```git clone https://github.com/lgutter/libft_xcode_tests.git && open libft_xcode_tests/libftt*```
 - Click the arrow next to the blue icon labeled "libfttests" to reveal a couple folders, including a "Source Files" folder.
 - Drag and drop all your .c files and your libft.h file to the "Source Files" folder, and click finish in the window that pops up. (note: the target has to be libfttests, but this should be default.)
 - Build your library using the Play button on the top, just to check your library compiles within Xcode. (it might show you some implicit conversions, I would advise you to fix those.)
