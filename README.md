@@ -1,5 +1,8 @@
 # libft Xcode tests
 
+**PLEASE WRITE YOUR OWN TESTS BEFORE TRYING OUT THESE!\
+The whole reason I made these instead of using the ones already on GitHub, is because it taught me a LOT.**
+
 These are my personal tests for libft, written in objective C using the XCTest framework within Xcode.
 
 All functions in Part 1 and Part 2 are tested, but there is no NULL protection testing.\
