@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3C0892C621240151C3FDD9BDF6B600278A62C46A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3C0892C621240151C3FDD9BDF6B600278A62C46A" : 9223372036854775807,
+    "9077CBC84932B8467E86E21FB2E7FBC13649798F" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EB7E7F38-4B3A-496D-A595-44459F585404",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3C0892C621240151C3FDD9BDF6B600278A62C46A" : "libft_xcode_tests\/",
+    "9077CBC84932B8467E86E21FB2E7FBC13649798F" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "libfttests",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "libfttests.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lgutter\/libft_xcode_tests.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3C0892C621240151C3FDD9BDF6B600278A62C46A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "vogsphere.codam.nl:intra\/2019\/activities\/libft\/lgutter",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9077CBC84932B8467E86E21FB2E7FBC13649798F"
+    }
+  ]
+}
