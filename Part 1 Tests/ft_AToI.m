@@ -55,8 +55,8 @@
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
 }
 
-- (void)testWithMaxIntegerPlusOne {
-	char str[] = "2147483648";
+- (void)testWithNumberOverMaxInt{
+	char str[] = "7223372036854775807";
 	int	ret1;
 	int ret2;
 
@@ -65,8 +65,88 @@
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
 }
 
-- (void)testWithTooLargeNumber{
-	char str[] = "2147483648343290";
+- (void)testWithMinLong {
+	char str[] = "-9223372036854775808";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with min long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithNumberUnderMinLong {
+	char str[] = "-12446744073709551615";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with value under min long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithNegativeMaxUnsignedLong {
+	char str[] = "-18446744073709551615";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with max unsigned long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithNegativeNumberOverMaxUnsignedLong {
+	char str[] = "-18446744073709557753";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with negative value over max long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithMaxLong {
+	char str[] = "9223372036854775807";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with max long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithNumberOverMaxLong {
+	char str[] = "12446744083709551615";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with value over max long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithMaxUnsignedLong {
+	char str[] = "18446744073709551615";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with max unsigned long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithNumberOverMaxUnsignedLong {
+	char str[] = "18446744073709557753";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with value over max long. Expected %i, returned %i", ret1, ret2);
+}
+
+- (void)testWithMaxIntegerPlusOne {
+	char str[] = "2147483648";
 	int	ret1;
 	int ret2;
 
