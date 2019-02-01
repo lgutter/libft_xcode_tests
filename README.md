@@ -8,7 +8,7 @@ All functions in Part 1 and Part 2 are tested, but there is no NULL protection t
 
 To set up these tests follow these steps:
 
-- git clone & oen the test project by running this from your terminal:```git clone https://github.com/lgutter/libft_xcode_tests.git && open ./libft_xcode_tests/libfttests.xcodeproj```
+- git clone & open the test project by running this from your terminal:```git clone https://github.com/lgutter/libft_xcode_tests.git && open ./libft_xcode_tests/libfttests.xcodeproj```
 - Click the arrow next to the blue icon labeled "libfttests" to reveal a couple folders, including a "Source Files" folder.
 - Drag and drop all your .c files and your libft.h file to the "Source Files" folder, and click finish in the window that pops up. (note: the target has to be libfttests, but this should be default.)
 - Build your library using the Play button on the top, just to check your library compiles within Xcode.
