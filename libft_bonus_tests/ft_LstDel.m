@@ -39,13 +39,10 @@
 	new[1] = ft_lstnew("blub", 5);
 	new[2] = ft_lstnew("stuxnet", 7);
 	start = &new[0];
-	ft_listadd(start, new[1]);
-	ft_listadd(start, new[2]);
+	ft_lstadd(start, new[1]);
+	ft_lstadd(start, new[2]);
 	ft_lstdel(&new[0], ft_memdelsize);
-	while (index < 3)
-	{
-		XCTAssert(new[index] == NULL, @"ft_delone failed to delete element %zu containing strings. returned %p instead.", index, new[index]);
-	}
+	XCTAssert(*start == NULL, @"ft_delone failed to delete element %zu containing strings. returned %p instead.", index, new[index]);
 }
 
 @end
