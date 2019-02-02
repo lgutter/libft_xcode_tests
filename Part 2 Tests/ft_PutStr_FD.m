@@ -22,17 +22,17 @@
 	int fd;
 	ssize_t e;
 	ssize_t i = 0;
-	fd = open("testputstrfd.txt", O_WRONLY | O_CREAT);
-	chmod("testputstrfd.txt", S_IRUSR | S_IWUSR);
+	fd = open("testputstrfd0.txt", O_WRONLY | O_CREAT);
+	chmod("testputstrfd0.txt", S_IRUSR | S_IWUSR);
 	ft_putstr_fd(str, fd);
 	close(fd);
-	fd = open("testputstrfd.txt", O_RDONLY);
+	fd = open("testputstrfd0.txt", O_RDONLY);
 	e = read(fd, check, 15);
 	if (e < 1)
 		XCTFail(@"Read error: %zi, errno is %i", e, errno);
 	while (i < e)
 	{
-		XCTAssert(check[i] == str[i], @"putstr_fd failed, fd is %i, e is %zi, character printed was \'%c\'", fd, e, check[i]);
+		XCTAssert(check[i] == str[i], @"putstr_fd failed at pos %zi, fd is %i, e is %zi, character printed was \'%c\'", i, fd, e, check[i]);
 		i++;
 	}
 	close(fd);
