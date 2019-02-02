@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "libft.h"
+#import <sys/stat.h>
 
 @interface ft_PutNbr_FD : XCTestCase
 
@@ -22,10 +23,14 @@
 	ssize_t i = 0;
 	ssize_t e;
 	int fd;
-	freopen("testputnbr0.txt", "w", stdout);
+	fd = open("testputnbr0.txt", O_WRONLY | O_CREAT);
+	chmod("testputnbr0.txt", S_IRUSR | S_IWUSR);
 	ft_putnbr_fd(123, fd);
+	close(fd);
 	fd = open("testputnbr0.txt", O_RDONLY);
 	e = read(fd, check, 15);
+	if (e < 1)
+		XCTFail(@"Read error: %zi, errno is %i", e, errno);
 	while (i < e)
 	{
 		XCTAssert(check[i] == str[i], @"PutStr failed at pos %zi, printed %c instead of %c", i, check[i], str[i]);
@@ -40,10 +45,14 @@
 	ssize_t i = 0;
 	ssize_t e;
 	int fd;
-	freopen("testputnbr1.txt", "w", stdout);
+	fd = open("testputnbr1.txt", O_WRONLY | O_CREAT);
+	chmod("testputnbr1.txt", S_IRUSR | S_IWUSR);
 	ft_putnbr_fd(-123, fd);
+	close(fd);
 	fd = open("testputnbr1.txt", O_RDONLY);
 	e = read(fd, check, 15);
+	if (e < 1)
+		XCTFail(@"Read error: %zi, errno is %i", e, errno);
 	while (i < e)
 	{
 		XCTAssert(check[i] == str[i], @"PutStr failed at pos %zi, printed %c instead of %c", i, check[i], str[i]);
@@ -58,10 +67,14 @@
 	ssize_t i = 0;
 	ssize_t e;
 	int fd;
-	freopen("testputnbr2.txt", "w", stdout);
+	fd = open("testputnbr2.txt", O_WRONLY | O_CREAT);
+	chmod("testputnbr2.txt", S_IRUSR | S_IWUSR);
 	ft_putnbr_fd(2147483647, fd);
+	close(fd);
 	fd = open("testputnbr2.txt", O_RDONLY);
 	e = read(fd, check, 15);
+	if (e < 1)
+		XCTFail(@"Read error: %zi, errno is %i", e, errno);
 	while (i < e)
 	{
 		XCTAssert(check[i] == str[i], @"PutStr failed at pos %zi, printed %c instead of %c", i, check[i], str[i]);
@@ -76,10 +89,14 @@
 	ssize_t i = 0;
 	ssize_t e;
 	int fd;
-	freopen("testputnbr3.txt", "w", stdout);
+	fd = open("testputnbr3.txt", O_WRONLY | O_CREAT);
+	chmod("testputnbr3.txt", S_IRUSR | S_IWUSR);
 	ft_putnbr_fd(-2147483648, fd);
+	close(fd);
 	fd = open("testputnbr3.txt", O_RDONLY);
 	e = read(fd, check, 15);
+	if (e < 1)
+		XCTFail(@"Read error: %zi, errno is %i", e, errno);
 	while (i < e)
 	{
 		XCTAssert(check[i] == str[i], @"PutStr failed at pos %zi, printed %c instead of %c", i, check[i], str[i]);
@@ -93,10 +110,14 @@
 	ssize_t i = 0;
 	ssize_t e;
 	int fd;
-	freopen("testputnbr4.txt", "w", stdout);
+	fd = open("testputnbr4.txt", O_WRONLY | O_CREAT);
+	chmod("testputnbr4.txt", S_IRUSR | S_IWUSR);
 	ft_putnbr_fd(-2147483647, fd);
+	close(fd);
 	fd = open("testputnbr4.txt", O_RDONLY);
 	e = read(fd, check, 15);
+	if (e < 1)
+		XCTFail(@"Read error: %zi, errno is %i", e, errno);
 	while (i < e)
 	{
 		XCTAssert(check[i] == str[i], @"PutStr failed at pos %zi, printed %c instead of %c", i, check[i], str[i]);

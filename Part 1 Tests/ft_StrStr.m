@@ -87,6 +87,15 @@
 	XCTAssert(ret1 == ret2, @"ft_strstr failed with weird chars in string on pos 9. Expected %p, returned %p", ret1, ret2);
 }
 
+- (void)testWhenExtendedAsciiStringIsOnPos9 {
+	char str[] = "Thisisate\xe3t\xe3t";
+	void *ret1;
+	void *ret2;
+	ret1 = strstr(str, "*&%");
+	ret2 = ft_strstr(str, "*&%");
+	XCTAssert(ret1 == ret2, @"ft_strstr failed with weird chars in string on pos 9. Expected %p, returned %p", ret1, ret2);
+}
+
 - (void)testWhenWeirdStringIsOnPos10 {
 	char str[] = "Thisisates*&%";
 	void *ret1;
@@ -104,6 +113,15 @@
 	ret1 = strstr(str, "");
 	ret2 = ft_strstr(str, "");
 	XCTAssert(ret1 == ret2, @"ft_strstr failed when char is '\0'. Expected %p, returned %p", ret1, ret2);
+}
+
+- (void)testWhentestestIsPartlyOnPos4AndCompleteOnPos7 {
+	char str[] = "Thistestestosisatest";
+	void *ret1;
+	void *ret2;
+	ret1 = strstr(str, "testos");
+	ret2 = ft_strstr(str, "testos");
+	XCTAssert(ret1 == ret2, @"ft_strstr failed with \"cky\" on pos 0. Expected %p, returned %p", ret1, ret2);
 }
 
 @end
