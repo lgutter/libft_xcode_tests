@@ -55,8 +55,8 @@
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with maximum integer. Expected %i, returned %i", ret1, ret2);
 }
 
-- (void)testWithMaxIntegerPlusOne {
-	char str[] = "2147483648";
+- (void)testWithMaxIntegerPlusTwo {
+	char str[] = "2147483649";
 	int	ret1;
 	int ret2;
 
@@ -316,4 +316,13 @@
 	XCTAssert(ret1 == ret2, @"ft_atoi failed with value over max long. Expected %i, returned %i", ret1, ret2);
 }
 
+- (void)testWithNumberJustUnderMaxUnsignedLong {
+	char str[] = "18446744073709551613";
+	int	ret1;
+	int ret2;
+
+	ret1 = atoi(str);
+	ret2 = ft_atoi(str);
+	XCTAssert(ret1 == ret2, @"ft_atoi failed with value over max long. Expected %i, returned %i", ret1, ret2);
+}
 @end
