@@ -56,4 +56,22 @@ char	test_char_increment_map(char c)
 	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
+- (void)testIfReturnIncludesRoomForTermZero {
+	char *str;
+	char *ret;
+	int i = 0;
+
+	str = (char*)malloc(sizeof(char) * 10);
+	str = "aaaaaaaaa";
+	i = 0;
+	ret = ft_strmap(str, &test_char_increment_map);
+	while(i < 9)
+	{
+		XCTAssert(ret[i] == 'b', @"strmap failed on position %i, char is %c", i, ret[i]);
+		i++;
+	}
+	XCTAssert(ret[i] == '\0', @"strmap did not return a long enough string (including terminating zero");
+	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
+}
+
 @end
