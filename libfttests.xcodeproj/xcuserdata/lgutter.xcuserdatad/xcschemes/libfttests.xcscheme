@@ -48,6 +48,16 @@
                ReferencedContainer = "container:libfttests.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6FE7455322079167006617EF"
+               BuildableName = "Bonus Tests.xctest"
+               BlueprintName = "Bonus Tests"
+               ReferencedContainer = "container:libfttests.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

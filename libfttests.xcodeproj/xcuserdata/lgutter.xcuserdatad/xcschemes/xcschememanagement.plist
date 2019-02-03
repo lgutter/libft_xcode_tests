@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bonus Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Part 1 Tests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>6FE7455322079167006617EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6FFA0627220450A10047F563</key>
 		<dict>
 			<key>primary</key>
