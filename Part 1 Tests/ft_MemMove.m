@@ -198,8 +198,8 @@
 }
 
 - (void)testMemMoveOverlappingAfterStartOfWeirdString {
-	char str1[11] = "%$ \t\e\n @#\v";
-	char str2[11] = "%$ \t\e\n @#\v";
+	char str1[15] = ":(){ :|: & };:";
+	char str2[15] = ":(){ :|: & };:";
 	char *dst1;
 	char *dst2;
 	dst1 = (str1 + 3);
@@ -267,6 +267,29 @@
 	{
 		XCTAssert(check1[i] == check2[i], @"incorrect value on pos %i in dst, expected %c, returned %c", i, check1[i], check2[i]);
 		XCTAssert(str1[i] == str2[i], @"incorrect value on pos %i in src, expected %c, returned %c", i, str1[i], str2[i]);
+		i++;
+	}
+}
+
+- (void)testMemMoveWithOverlappingEmptyStringAndSize0 {
+	char *str1 = (char *)malloc(sizeof(char) * 1);
+	char *str2 = (char *)malloc(sizeof(char) * 1);
+	str1 = "";
+	str2 = "";
+	char *dst1;
+	char *dst2;
+	dst1 = (str1 + 1);
+	dst2 = (str2 + 1);
+	char *check1;
+	char *check2;
+	int i = 0;
+	check1 = memmove(dst1, str1, 0);
+	check2 = ft_memmove(dst2, str2, 0);
+	XCTAssert(check1 == dst1, @"memmove did not return expected address. returned %p, expected %p.", check1, dst1);
+	XCTAssert(check2 == dst2, @"ft_memmove did not return expected address. returned %p, expected %p.", check2, dst2);
+	while (i < 1)
+	{
+		XCTAssert(check1[i] == check2[i], @"incorrect value on pos %i, expected %c, returned %c", i, check1[i], check2[i]);
 		i++;
 	}
 }
