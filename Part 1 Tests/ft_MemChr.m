@@ -132,4 +132,14 @@
 	XCTAssert(ret1 == ret2, @"ft_memchr failed when char is '\0'. Expected %p, returned %p", ret1, ret2);
 }
 
+- (void)testWhenExtendedAsciiIsOnPos10 {
+	char str[15];
+	strcpy(str, ":(){ :|: & };:");
+	void *ret1;
+	void *ret2;
+	ret1 = memchr(str, '\xde', 15);
+	ret2 = ft_memchr(str, '\xde', 15);
+	XCTAssert(ret1 == ret2, @"ft_memchr failed with * on pos 10. Expected %p, returned %p", ret1, ret2);
+}
+
 @end

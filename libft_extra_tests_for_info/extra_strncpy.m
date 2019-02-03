@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "libft.h"
 
 @interface extra_strncpy : XCTestCase
 
