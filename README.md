@@ -5,7 +5,7 @@ The whole reason I made these instead of using the ones already on GitHub, is be
 
 These are my personal tests for libft, written in objective C using the XCTest framework within Xcode.
 
-All functions in Part 1 and Part 2 are tested, but there is no NULL protection testing.\
+All functions are tested (part 1, 2 and bonus), but there is no NULL protection testing.\
 These also do not tests cases where the real function breaks, so consider these tests the basics!\
 You might however, find errors not found by some other tests on GitHub.
 
@@ -30,7 +30,6 @@ Once Xcode is able to run all the tests it will show you which have failed, and 
 Good luck!
 
 ## Support
-Support for the Bonus functions will be added once I finish those!
 
 Can't get it to work or have bug reports / suggestions?\
 Feel free to contact me: https://profile.intra.42.fr/users/lgutter
