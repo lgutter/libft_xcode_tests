@@ -94,7 +94,7 @@
 	new = ft_lstnew(integer, 2);
 	integer[0] = 0;
 	integer = (int *)new->content;
-	XCTAssert(integer[0] == -1431633921 && new->content_size == 2 && new->next == NULL,
+	XCTAssert(integer[0] == 65535 && new->content_size == 2 && new->next == NULL,
 			  @"ft_lstnew failed with integer and too short size. returned content integer: %i, content_size: %zu, next: %p",
 			  integer[0], new->content_size, new->next);
 }
@@ -120,7 +120,7 @@
 	integer[0] = 9223372036854775807;
 	new = ft_lstnew(&integer[0], 4);
 	integer = (long *)new->content;
-	XCTAssert(integer[0] == -6148914689804861441 && new->content_size == 4 && new->next == NULL,
+	XCTAssert(integer[0] == 4294967295 && new->content_size == 4 && new->next == NULL,
 			  @"ft_lstnew failed with long and too short size. returned content long: %li, content_size: %zu, next: %p",
 			  integer[0], new->content_size, new->next);
 }
