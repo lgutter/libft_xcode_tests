@@ -31,8 +31,9 @@
 	XCTAssert(new == NULL, @"ft_del failed to delete element containing a string. returned %p instead.", new);
 }
 
+//CANT GET THIS FUNCTIONAL TESTING MORE THAN ONE ELEMENTS... FUNCTION WORKS THOUGH.
 - (void)testWithThreeElementsContainingStrings {
-	t_list **new = (t_list **)malloc(sizeof(t_list) * 3);
+	t_list **new = (t_list **)malloc(sizeof(t_list *) * 3);
 	size_t index = 0;
 	t_list **start;
 	new[0] = ft_lstnew("Test", 5);
@@ -41,8 +42,8 @@
 	start = &new[0];
 	ft_lstadd(start, new[1]);
 	ft_lstadd(start, new[2]);
-	ft_lstdel(&new[0], ft_memdelsize);
-	XCTAssert(*start == NULL, @"ft_delone failed to delete element %zu containing strings. returned %p instead.", index, new[index]);
+	ft_lstdel(start, ft_memdelsize);
+	XCTAssert(new[index] == NULL, @"ft_delone failed to delete element %zu containing strings. returned %p instead.", index, new[index]);
 }
 
 @end

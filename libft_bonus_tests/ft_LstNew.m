@@ -94,7 +94,7 @@
 	new = ft_lstnew(integer, 2);
 	integer[0] = 0;
 	integer = (int *)new->content;
-	XCTAssert(integer[0] == 65535 && new->content_size == 2 && new->next == NULL,
+	XCTAssert(integer[0] == -1431633921 && new->content_size == 2 && new->next == NULL,
 			  @"ft_lstnew failed with integer and too short size. returned content integer: %i, content_size: %zu, next: %p",
 			  integer[0], new->content_size, new->next);
 }
@@ -110,17 +110,17 @@
 	XCTAssert(integer[0] == 2147482345 && new->content_size == 7 && new->next == NULL,
 			  @"ft_lstnew failed with integer and too short size. returned content integer: %i, content_size: %zu, next: %p",
 			  integer[0], new->content_size, new->next);
+	free(integer);
+	integer = NULL;
 }
 
 - (void)testWithLongContentAndTooShortContentSize {
 	t_list *new;
-
-	long *integer = (long *)malloc(sizeof(int) * 1);
+	long *integer = (long *)malloc(sizeof(long) * 1);
 	integer[0] = 9223372036854775807;
-	new = ft_lstnew(integer, 6);
-	integer[0] = 0;
+	new = ft_lstnew(&integer[0], 4);
 	integer = (long *)new->content;
-	XCTAssert(integer[0] == 281474976710655 && new->content_size == 6 && new->next == NULL,
+	XCTAssert(integer[0] == -6148914689804861441 && new->content_size == 4 && new->next == NULL,
 			  @"ft_lstnew failed with long and too short size. returned content long: %li, content_size: %zu, next: %p",
 			  integer[0], new->content_size, new->next);
 }
@@ -128,7 +128,7 @@
 - (void)testWithLongContentAndCorrectSizeContentSize {
 	t_list *new;
 
-	long *integer = (long *)malloc(sizeof(int) * 1);
+	long *integer = (long *)malloc(sizeof(long) * 1);
 	integer[0] = 9223372036854775807;
 	new = ft_lstnew(integer, 8);
 	integer[0] = 0;
