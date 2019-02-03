@@ -103,12 +103,4 @@
 	free(ret); //if this gives SIGABORT, you did not allocate your return string properly.
 }
 
-//CREATES BAD EXCESS ERROR SINCE NO MEMORY SPACE WAS ALLOCATED
-- (void)testSizeOf0 {
-	char *str = (char *)malloc(0);
-	char *ret;
-	ret = ft_strtrim(str);
-	XCTAssert(ret, @"ft_strtrim didn't allocate new string. Address is %p", ret);
-}
-
 @end
