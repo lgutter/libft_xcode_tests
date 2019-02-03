@@ -84,6 +84,4 @@ void	ft_iterlist(t_list *elem)
 	}
 	XCTAssert(index == 0, @"missing elements! elements missed: %zu", index);
 }
-
-
 @end
