@@ -15,11 +15,27 @@
 
 @implementation ft_LstDel
 
+void	ft_memdel_size_lstdel(void *pointer, size_t size)
+{
+    size_t			index;
+    unsigned char	*input;
+    
+    index = 0;
+    input = pointer;
+    while (index < size)
+    {
+        input[index] = 0;
+        index++;
+    }
+    free(pointer);
+    pointer = NULL;
+}
+
 - (void)testWithOneElementContainingNULL {
 	t_list *new;
 
 	new = ft_lstnew(NULL, 0);
-	ft_lstdel(&new, ft_memdelsize);
+	ft_lstdel(&new, ft_memdel_size_lstdel);
 	XCTAssert(new == NULL, @"ft_del failed to delete element containing NULL. returned %p instead.", new);
 }
 
@@ -27,7 +43,7 @@
 	t_list *new;
 
 	new = ft_lstnew("Test", 5);
-	ft_lstdel(&new, ft_memdelsize);
+	ft_lstdel(&new, ft_memdel_size_lstdel);
 	XCTAssert(new == NULL, @"ft_del failed to delete element containing a string. returned %p instead.", new);
 }
 
@@ -42,7 +58,7 @@
 	start = &new[0];
 	ft_lstadd(start, new[1]);
 	ft_lstadd(start, new[2]);
-	ft_lstdel(start, ft_memdelsize);
+	ft_lstdel(start, ft_memdel_size_lstdel);
 	XCTAssert(new[index] == NULL, @"ft_delone failed to delete element %zu containing strings. returned %p instead.", index, new[index]);
 }
 
