@@ -38,7 +38,7 @@
 	ret = ft_itoa(-123);
 	while (i < 5)
 	{
-		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
+		XCTAssert(str[i] == ret[i], @"pos %i is incorrect, expected %c, returned %c", i, str[i], ret[i]);
 		i++;
 	}
 	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
@@ -53,7 +53,7 @@
 	ret = ft_itoa(0);
 	while (i < 1)
 	{
-		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
+		XCTAssert(str[i] == ret[i], @"pos %i is incorrect, expected %c, returned %c", i, str[i], ret[i]);
 		i++;
 	}
 	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
@@ -68,7 +68,7 @@
 	ret = ft_itoa(2147483647);
 	while (i < 11)
 	{
-		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
+		XCTAssert(str[i] == ret[i], @"pos %i is incorrect, expected %c, returned %c", i, str[i], ret[i]);
 		i++;
 	}
 	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
@@ -83,7 +83,7 @@
 	ret = ft_itoa(-2147483648);
 	while (i < 12)
 	{
-		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
+		XCTAssert(str[i] == ret[i], @"pos %i is incorrect, expected %c, returned %c", i, str[i], ret[i]);
 		i++;
 	}
 	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
@@ -98,7 +98,7 @@
 	ret = ft_itoa(-2147483647);
 	while (i < 12)
 	{
-		XCTAssert(str[i] == ret[i], @"pos is incorrect, expected %c, returned %c", str[i], ret[i]);
+		XCTAssert(str[i] == ret[i], @"pos %i is incorrect, expected %c, returned %c", i, str[i], ret[i]);
 		i++;
 	}
 	free (ret); //if this gives SIGABORT, you did not allocate your return string properly.
