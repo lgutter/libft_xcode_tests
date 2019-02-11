@@ -195,4 +195,34 @@
 	free(string2);
 }
 
+- (void)testWithSimpleStringsButTooShortCat {
+	size_t len = 12;
+	size_t index = 0;
+	size_t limit = 0;
+	char *string1 = (char *)malloc(sizeof(char) * len);
+	char *string2 = (char *)malloc(sizeof(char) * len);
+	char *cat = "hi";
+	size_t  check1;
+	size_t  check2;
+	while (limit <= len)
+	{
+		index = 0;
+		string1 = memset(string1, 42, len);
+		string2 = memset(string2, 42, len);
+		string1 = strcpy(string1, "Thisis");
+		string2 = strcpy(string2, "Thisis");
+		check1 = strlcat(string1, cat, limit);
+		check2 = ft_strlcat(string2, cat, limit);
+		XCTAssert(check1 == check2, @"strlcat returned wrong size with limit %zu. returned %zu, expected %zu.", limit, check2, check1);
+		while (index < len)
+		{	//If this only fails when limit is larger than length of dst + length of src, you probably forgot to check for the end of src.
+			XCTAssert(string1[index] == string2[index], @"ft_strlcat fails on pos %zu with limit %zu. strlcat returned %c, ft_strlcat returned %c", index, limit, string1[index], string2[index]);
+			index++;
+		}
+		limit++;
+	}
+	free(string1);
+	free(string2);
+}
+
 @end
