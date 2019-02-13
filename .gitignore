@@ -4,3 +4,4 @@
 *.pdf
 filenames.sh
 .vscode/launch.json
+./Build
